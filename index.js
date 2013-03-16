@@ -1,6 +1,6 @@
 var arDrone = require('ar-drone');
 //var fs = require('fs');
-var maxAltitude = 3.0;
+var maxAltitude = 2.3;
 var minAltitude = 1.0;
 var client = arDrone.createClient();
 client.on('navdata', function () {
@@ -9,9 +9,7 @@ client.on('navdata', function () {
 
 [ 'navdata', 'landing', 'landed', 'takeoff', 'hovering', 'flying', 'lowBattery' ].forEach(function (state) {
     client.on(state, function(data) {
-        //fs.
-        //  console.log('event: %s', state);
-        //console.log('event args: %j', arguments);
+        console.log('.');
     })
 });
 
